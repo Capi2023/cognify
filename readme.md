@@ -149,6 +149,11 @@ En esta pantalla de Lista de Delincuentes del sistema Cognify, se muestra el reg
 
 La interfaz presenta dos opciones de acción: "Sentencia Normal" en azul y "Cognify" en verde. El botón de Sentencia Normal probablemente asigna una sentencia convencional, mientras que el botón Cognify activa el enfoque de rehabilitación cognitiva que caracteriza al sistema, permitiendo trabajar en la empatía y conciencia del impacto de sus acciones en otros. Esta pantalla facilita la elección del tipo de sentencia de manera rápida y eficiente, apoyando la gestión de casos y el seguimiento de los procesos de rehabilitación.
 
+### Pantalla del Cerebro simulado
+![Pantalla del Cerebro simulado](imagenes/cerebro.png)
+
+### Pantalla de Reloj
+![Pantalla de Reloj](relojmovien/prueba.png)
 
 ### Video de corrida en youtube
 
