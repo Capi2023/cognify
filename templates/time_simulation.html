@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulación de Tiempo - Cognify</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .clock {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            background: url('{{ url_for('static', filename='clock.png') }}') no-repeat center;
+            background-size: contain;
+        }
+        .hand {
+            position: absolute;
+            /* Ajusta la longitud de la manecilla */
+            width: 35%; /* Cambia este valor para modificar la longitud */
+            height: 2px; /* Cambia este valor para modificar el grosor */
+            background: black; /* Color de la manecilla */
+            top: 50%; /* Posición vertical */
+            left: 15%; /* Posición horizontal */
+            transform-origin: 100%; /* Punto de rotación al final de la manecilla */
+            animation: rotate 5s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+<div class="container text-center mt-5">
+    <h2>El criminal está experimentando años de recuerdos en minutos...</h2>
+    <div class="clock">
+        <div class="hand"></div>
+    </div>
+    <form method="post">
+        <button type="submit" class="btn btn-success mt-3">Ver Resultados</button>
+    </form>
+</div>
+</body>
+</html>

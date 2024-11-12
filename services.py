@@ -1,5 +1,6 @@
 # services.py
-from models import db, Criminal, MemoryModel, MemoryFactory
+import random
+from models import db, Criminal, MemoryModel, MemoryFactory, CrimeType
 
 class CriminalService:
     @staticmethod
@@ -16,7 +17,34 @@ class CriminalService:
     @staticmethod
     def apply_normal_sentence(criminal_id):
         criminal = Criminal.query.get(criminal_id)
-        criminal.sentencia = "Asignado a una sentencia de 10 años de prisión"  # Ejemplo de sentencia
+        
+        # Definir un rango de años de sentencia, por ejemplo, entre 1 y 25 años
+        sentence_years = random.randint(1, 25)
+        
+        # Opcional: puedes ajustar el rango según el tipo de crimen
+        # Por ejemplo, crímenes violentos podrían tener sentencias más largas
+        if criminal.crime_type == CrimeType.VIOLENT:
+            sentence_years = random.randint(10, 30)
+        elif criminal.crime_type == CrimeType.FINANCIAL:
+            sentence_years = random.randint(5, 15)
+        elif criminal.crime_type == CrimeType.HATE:
+            sentence_years = random.randint(5, 20)
+        elif criminal.crime_type == CrimeType.DRUG_TRAFFICKING:
+            sentence_years = random.randint(8, 25)
+        elif criminal.crime_type == CrimeType.HUMAN_TRAFFICKING:
+            sentence_years = random.randint(15, 30)
+        elif criminal.crime_type == CrimeType.PROPERTY:
+            sentence_years = random.randint(1, 10)
+        elif criminal.crime_type == CrimeType.FRAUD:
+            sentence_years = random.randint(2, 12)
+        elif criminal.crime_type == CrimeType.ENVIRONMENTAL:
+            sentence_years = random.randint(3, 15)
+        elif criminal.crime_type == CrimeType.CYBER:
+            sentence_years = random.randint(2, 8)
+        else:  # GENERIC
+            sentence_years = random.randint(1, 5)
+
+        criminal.sentencia = f"Asignado a una sentencia de {sentence_years} años de prisión"
         db.session.commit()
 
     @staticmethod

@@ -46,7 +46,7 @@ def process_criminal(criminal_id):
         flash("Sentencia normal aplicada al criminal.")
         return redirect(url_for('list_criminals'))
     elif choice == 'cognify':
-        return redirect(url_for('select_memory', criminal_id=criminal_id))
+        return redirect(url_for('brain_mapping', criminal_id=criminal_id))
     else:
         flash("Opción inválida seleccionada.")
         return redirect(url_for('list_criminals'))
@@ -56,7 +56,6 @@ def select_memory(criminal_id):
     criminal = Criminal.query.get_or_404(criminal_id)
     
     if request.method == 'POST':
-        # Recibir el id de la memoria seleccionada
         selected_memory_desc = request.form.get('memory')
         memory = next((m for m in MemoryFactory.get_memories(criminal.crime_type) if m.description == selected_memory_desc), None)
         
@@ -70,13 +69,28 @@ def select_memory(criminal_id):
             )
             db.session.add(memory_model)
             db.session.commit()
-            flash("Cognify aplicado al criminal con la memoria seleccionada.")
-            return redirect(url_for('list_criminals'))
+            return redirect(url_for('time_simulation', criminal_id=criminal_id))
         else:
             flash("Memoria no válida seleccionada.")
     
     memories = MemoryFactory.get_memories(criminal.crime_type)
     return render_template('select_memory.html', criminal=criminal, memories=memories)
+
+@app.route('/brain_mapping/<int:criminal_id>', methods=['GET', 'POST'])
+def brain_mapping(criminal_id):
+    criminal = Criminal.query.get_or_404(criminal_id)
+    if request.method == 'POST':
+        # Después del mapeo cerebral, redirige a la selección de memoria
+        return redirect(url_for('select_memory', criminal_id=criminal_id))
+    return render_template('brain_mapping.html', criminal=criminal)
+
+@app.route('/time_simulation/<int:criminal_id>', methods=['GET', 'POST'])
+def time_simulation(criminal_id):
+    criminal = Criminal.query.get_or_404(criminal_id)
+    if request.method == 'POST':
+        flash("Cognify aplicado al criminal.")
+        return redirect(url_for('list_criminals'))
+    return render_template('time_simulation.html', criminal=criminal)
 
 
 if __name__ == '__main__':

@@ -79,7 +79,7 @@
                         <p class="result-heading">Resultado del Procesamiento:</p>
                         <p><strong>Sentencia:</strong> {{ criminal.sentencia }}</p>
                     </div>
-                {% elif criminal.cognify_data %}
+                    {% elif criminal.cognify_data %}
                     <div>
                         <p class="result-heading">Resultados de Cognify:</p>
                         <ul class="list-group">
@@ -93,7 +93,7 @@
                             {% endfor %}
                         </ul>
                     </div>
-                {% endif %}
+                {% endif %}                
             </div>
         </div>
     {% endfor %}

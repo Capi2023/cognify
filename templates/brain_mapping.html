@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapeo Cerebral - Cognify</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos para la animación del cerebro */
+        .brain {
+            width: 200px;
+            height: 200px;
+            background-image: url('{{ url_for('static', filename='brain.png') }}');
+            background-size: cover;
+            margin: 0 auto;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .highlight {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 0, 0, 0.5);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Posiciones simuladas de las regiones cerebrales */
+        #hipocampo { top: 80px; left: 60px; width: 30px; height: 30px; }
+        #corteza_prefrontal { top: 30px; left: 85px; width: 40px; height: 40px; }
+        #amigdala { top: 100px; left: 120px; width: 25px; height: 25px; }
+    </style>
+</head>
+<body>
+<div class="container text-center mt-5">
+    <h2>Mapeo Cerebral en Proceso para {{ criminal.name }}</h2>
+    <div class="brain mt-4 position-relative">
+        <div id="hipocampo" class="highlight"></div>
+        <div id="corteza_prefrontal" class="highlight"></div>
+        <div id="amigdala" class="highlight"></div>
+    </div>
+    <p class="mt-3">Escaneando regiones clave: Hipocampo, Corteza Prefrontal y Amígdala...</p>
+    <form method="post">
+        <button type="submit" class="btn btn-primary mt-3">Continuar</button>
+    </form>
+</div>
+</body>
+</html>
