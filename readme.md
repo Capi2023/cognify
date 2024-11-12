@@ -153,7 +153,7 @@ La interfaz presenta dos opciones de acción: "Sentencia Normal" en azul y "Cogn
 ![Pantalla del Cerebro simulado](imagenes/cerebro.png)
 
 ### Pantalla de Reloj
-![Pantalla de Reloj](relojmovien/.png)
+![Pantalla de Reloj](imagenes/relojmovien.png)
 
 ### Video de corrida en youtube
 
