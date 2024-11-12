@@ -37,9 +37,7 @@
 | + get_setting()   |
 +-------------------+
 ```
-<p style="text-align: justify;">
 En el Modelo, las clases principales son CrimeType, Memory, MemoryFactory, Criminal, MemoryModel y SimulationConfig. CrimeType es una enumeración que define los tipos de delitos. Memory representa recuerdos con atributos como descripción, empatía y remordimiento. MemoryFactory genera listas de recuerdos basados en el tipo de delito. Criminal es un modelo de base de datos que tiene una relación uno a muchos con MemoryModel, indicando que un criminal puede tener múltiples recuerdos asociados. SimulationConfig es un singleton que gestiona la configuración de la simulación.
-</p>
 
 ## Vista
 
@@ -52,9 +50,7 @@ En el Modelo, las clases principales son CrimeType, Memory, MemoryFactory, Crimi
 | + mostrar_recuerdo(recuerdo)  |
 +-------------------+
 ```
-<p style="text-align: justify;">
 La clase Vista es responsable de la interacción con el usuario. Contiene métodos estáticos como mostrar_menu_principal, seleccionar_tipo_delito y mostrar_recuerdo. Estos métodos presentan opciones al usuario y muestran información relevante. La Vista no tiene relaciones directas con otras clases en el diagrama simplificado, ya que su función es servir de interfaz entre el usuario y el sistema, mostrando datos y capturando entradas.
-</p>
 
 ## Controlador
 
@@ -72,9 +68,7 @@ Flask Routes:
 - /process_criminal/<id> -> process_criminal()
 - /select_memory/<id> -> select_memory()
 ```
-<p style="text-align: justify;">
 En los Controladores, destacan las rutas de Flask y la clase CriminalForm. Las rutas incluyen funciones como list_criminals, process_criminal y select_memory, que manejan solicitudes HTTP y coordinan la lógica de la aplicación. CriminalForm es un formulario que permite crear nuevos criminales con campos como nombre y tipo de delito. Los controladores interactúan con el Modelo a través de servicios como CriminalService, facilitando la comunicación entre la Vista y el Modelo y gestionando el flujo de datos y operaciones de negocio.
-</p>
 
 ```markdown
 # Cognify
