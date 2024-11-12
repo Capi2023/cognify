@@ -1,5 +1,7 @@
 # Representación Simplificada de Clases y Relaciones (UML)
 ## Modelo
+
+```markdown
 +-------------------+
 |     CrimeType     |  (Enumeración)
 +-------------------+
@@ -34,7 +36,7 @@
 | + set_setting()   |
 | + get_setting()   |
 +-------------------+
-
+```
 
 ```markdown
 # Cognify
