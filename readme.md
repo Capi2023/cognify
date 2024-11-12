@@ -130,3 +130,21 @@ A medida que el sistema se expanda y sea adoptado por más instituciones, deber�
 ### Desarrollo de Algoritmos Avanzados
 
 La asignación efectiva de recuerdos personalizados a cada delincuente requiere el desarrollo de algoritmos sofisticados que puedan considerar múltiples factores, como el tipo de delito, el perfil psicológico y el historial individual. La incorporación de inteligencia artificial y aprendizaje automático puede mejorar la precisión y eficacia del sistema, aunque también agrega complejidad técnica y requiere consideraciones adicionales en cuanto a ética y transparencia algorítmica.
+
+# Vista de Cognify
+### Pantalla de Inicio
+![Pantalla de Inicio](imagenes/inicio.png)
+La página de inicio de Cognify ofrece una interfaz sencilla para la gestión y rehabilitación de delincuentes. Incluye un formulario donde los usuarios pueden registrar rápidamente a nuevos delincuentes, ingresando su nombre y seleccionando el tipo de delito. Debajo, se presenta una Lista de Delincuentes previamente registrados, mostrando el nombre, tipo de delito y dos opciones de procesamiento: "Sentencia Normal" y "Cognify". La opción Cognify permite aplicar un enfoque de rehabilitación cognitiva que busca desarrollar empatía y comprensión en los delincuentes. Cada registro también muestra los resultados del procesamiento, permitiendo un seguimiento personalizado y facilitando una rehabilitación más humana y efectiva.
+
+### Pantalla de Selección de Memoria
+![Pantalla de Memoria](imagenes/memoria.png)
+La pantalla de Selección de Memoria en Cognify permite a los usuarios asignar un recuerdo específico a cada delincuente, con el objetivo de fomentar la empatía y reflexión sobre sus acciones. En este caso, se muestra un delincuente llamado "Pablo" con un Tipo de Delito financiero.
+
+La interfaz presenta varias opciones de recuerdos relacionados con el impacto de los delitos financieros, como la "Conciencia de la ruina financiera de empresas y familias" y el "Impacto en familias debido a pérdidas financieras". Cada recuerdo aborda aspectos emocionales y sociales de las consecuencias de estos delitos. Tras seleccionar el recuerdo adecuado, el usuario puede hacer clic en el botón "Aplicar Cognify" para asignar el recuerdo a Pablo, integrando el enfoque de rehabilitación del sistema que ayuda a los delincuentes a comprender el impacto de sus acciones.
+
+
+### Pantalla de Prueba
+![Pantalla de Prueba](imagenes/prueba.png)
+En esta pantalla de Lista de Delincuentes del sistema Cognify, se muestra el registro de un delincuente llamado Eduardo con un Tipo de Delito de "Robo de Propiedad".
+
+La interfaz presenta dos opciones de acción: "Sentencia Normal" en azul y "Cognify" en verde. El botón de Sentencia Normal probablemente asigna una sentencia convencional, mientras que el botón Cognify activa el enfoque de rehabilitación cognitiva que caracteriza al sistema, permitiendo trabajar en la empatía y conciencia del impacto de sus acciones en otros. Esta pantalla facilita la elección del tipo de sentencia de manera rápida y eficiente, apoyando la gestión de casos y el seguimiento de los procesos de rehabilitación.
