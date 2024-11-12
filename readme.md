@@ -1,3 +1,22 @@
+# Cognify
+
+---
+
+## Proyecto de Desarrollo de Software
+
+### Alumnos:
+- **Emiliano Garcia Cordero** - 20211779
+- **Martinez Garcia Gabriel Stoyko** - 20211808
+- **Sanchez Salinas Eduardo Josue** - 20210637
+
+### Profesor:
+**René Solis R.**
+
+---
+
+Fecha de entrega: Martes 12 de noviembre.
+
+
 # Diagramas UML (MODELO, VISTA Y CONTROLADOR)
 ## Modelo
 
