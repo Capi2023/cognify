@@ -1,3 +1,41 @@
+# Representación Simplificada de Clases y Relaciones (UML)
+## Modelo
++-------------------+
+|     CrimeType     |  (Enumeración)
++-------------------+
+
++-------------------+            +-------------------+
+|      Memory       |            |   MemoryFactory   |
++-------------------+            +-------------------+
+| - description     |            | + get_memories()  |
+| - empathy         |            +-------------------+
+| - remorse         |
+| - impact          |
++-------------------+
+| + __init__()      |
++-------------------+
+
++-------------------+            +-------------------+
+|     Criminal      |<>---------1|   MemoryModel     |
++-------------------+ 1        * +-------------------+
+| - id              |            | - id              |
+| - name            |            | - description     |
+| - crime_type      |            | - empathy         |
+| - sentencia       |            | - remorse         |
+|                   |            | - impact          |
++-------------------+            | - criminal_id     |
+                                +-------------------+
+
++-------------------+
+| SimulationConfig  | (Singleton)
++-------------------+
+| - settings        |
++-------------------+
+| + set_setting()   |
+| + get_setting()   |
++-------------------+
+
+
 ```markdown
 # Cognify
 
