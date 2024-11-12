@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from models import db, Criminal, MemoryFactory, SimulationConfig, CrimeType
+from models import db, Criminal, MemoryFactory, SimulationConfig, CrimeType, MemoryModel
 from services import CriminalService
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, SubmitField
@@ -44,12 +44,40 @@ def process_criminal(criminal_id):
     if choice == 'sentencia_normal':
         CriminalService.apply_normal_sentence(criminal_id)
         flash("Sentencia normal aplicada al criminal.")
+        return redirect(url_for('list_criminals'))
     elif choice == 'cognify':
-        CriminalService.apply_cognify(criminal_id)
-        flash("Cognify aplicado al criminal.")
+        return redirect(url_for('select_memory', criminal_id=criminal_id))
     else:
         flash("Opción inválida seleccionada.")
-    return redirect(url_for('list_criminals'))
+        return redirect(url_for('list_criminals'))
+
+@app.route('/select_memory/<int:criminal_id>', methods=['GET', 'POST'])
+def select_memory(criminal_id):
+    criminal = Criminal.query.get_or_404(criminal_id)
+    
+    if request.method == 'POST':
+        # Recibir el id de la memoria seleccionada
+        selected_memory_desc = request.form.get('memory')
+        memory = next((m for m in MemoryFactory.get_memories(criminal.crime_type) if m.description == selected_memory_desc), None)
+        
+        if memory:
+            memory_model = MemoryModel(
+                description=memory.description,
+                empathy=memory.empathy,
+                remorse=memory.remorse,
+                impact=memory.impact,
+                criminal_id=criminal.id
+            )
+            db.session.add(memory_model)
+            db.session.commit()
+            flash("Cognify aplicado al criminal con la memoria seleccionada.")
+            return redirect(url_for('list_criminals'))
+        else:
+            flash("Memoria no válida seleccionada.")
+    
+    memories = MemoryFactory.get_memories(criminal.crime_type)
+    return render_template('select_memory.html', criminal=criminal, memories=memories)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

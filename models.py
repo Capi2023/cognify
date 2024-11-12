@@ -24,7 +24,7 @@ class Memory:
 
 class MemoryFactory:
     @staticmethod
-    def create_memory(crime_type):
+    def get_memories(crime_type):
         memories = []
 
         if crime_type == CrimeType.VIOLENT:
@@ -35,7 +35,6 @@ class MemoryFactory:
                 Memory("Vivencia de ver a alguien cercano en peligro por la violencia", empathy=True, remorse=True, impact="High"),
                 Memory("Conciencia de la pérdida de oportunidades debido a la violencia", empathy=False, remorse=True, impact="Low")
             ]
-
         elif crime_type == CrimeType.FINANCIAL:
             memories = [
                 Memory("Consecuencias económicas y sociales de los actos financieros", empathy=True, remorse=True, impact="Medium"),
@@ -44,7 +43,6 @@ class MemoryFactory:
                 Memory("Percepción de una vida de estrés y problemas económicos", empathy=False, remorse=True, impact="Medium"),
                 Memory("Conciencia de la ruina financiera de empresas y familias", empathy=True, remorse=False, impact="High")
             ]
-
         elif crime_type == CrimeType.HATE:
             memories = [
                 Memory("Comprensión y respeto por la diversidad y la igualdad", empathy=True, remorse=True, impact="High"),
@@ -53,7 +51,6 @@ class MemoryFactory:
                 Memory("Conciencia del impacto emocional del odio en otros", empathy=True, remorse=True, impact="Medium"),
                 Memory("Reflexión sobre el sufrimiento causado por prejuicios", empathy=True, remorse=False, impact="High")
             ]
-
         elif crime_type == CrimeType.CYBER:
             memories = [
                 Memory("Impacto de los ciberataques en la privacidad personal", empathy=True, remorse=True, impact="Medium"),
@@ -62,7 +59,6 @@ class MemoryFactory:
                 Memory("Recuerdo de los problemas causados por el fraude en línea", empathy=False, remorse=True, impact="Medium"),
                 Memory("Percepción de la desconfianza que genera la inseguridad digital", empathy=True, remorse=False, impact="Medium")
             ]
-
         elif crime_type == CrimeType.DRUG_TRAFFICKING:
             memories = [
                 Memory("Sufrimiento de personas afectadas por el abuso de drogas", empathy=True, remorse=True, impact="High"),
@@ -71,7 +67,6 @@ class MemoryFactory:
                 Memory("Conciencia de las consecuencias para la salud pública", empathy=False, remorse=True, impact="Medium"),
                 Memory("Sentimiento de pérdida por la influencia de las drogas en la comunidad", empathy=True, remorse=False, impact="Medium")
             ]
-
         elif crime_type == CrimeType.HUMAN_TRAFFICKING:
             memories = [
                 Memory("Empatía con las víctimas de trata de personas y esclavitud", empathy=True, remorse=True, impact="High"),
@@ -80,7 +75,6 @@ class MemoryFactory:
                 Memory("Percepción del sufrimiento de las familias afectadas", empathy=True, remorse=True, impact="Medium"),
                 Memory("Reflexión sobre la pérdida de derechos y libertades", empathy=True, remorse=True, impact="Medium")
             ]
-
         elif crime_type == CrimeType.PROPERTY:
             memories = [
                 Memory("Pérdida y daño causado por la sustracción de bienes ajenos", empathy=True, remorse=True, impact="Medium"),
@@ -89,7 +83,6 @@ class MemoryFactory:
                 Memory("Impacto emocional de la pérdida de pertenencias", empathy=True, remorse=True, impact="High"),
                 Memory("Reflexión sobre el esfuerzo necesario para reponer pérdidas", empathy=False, remorse=True, impact="Medium")
             ]
-
         elif crime_type == CrimeType.FRAUD:
             memories = [
                 Memory("Sufrimiento de quienes perdieron dinero por fraudes", empathy=True, remorse=True, impact="High"),
@@ -98,7 +91,6 @@ class MemoryFactory:
                 Memory("Percepción de la ansiedad causada por la pérdida de ahorros", empathy=True, remorse=True, impact="Medium"),
                 Memory("Reflexión sobre la desconfianza generada por los fraudes", empathy=True, remorse=True, impact="Low")
             ]
-
         elif crime_type == CrimeType.ENVIRONMENTAL:
             memories = [
                 Memory("Conciencia de los daños al medio ambiente y sus efectos", empathy=True, remorse=True, impact="High"),
@@ -107,7 +99,6 @@ class MemoryFactory:
                 Memory("Empatía hacia comunidades afectadas por daños ambientales", empathy=True, remorse=True, impact="Medium"),
                 Memory("Conciencia del impacto ambiental a largo plazo", empathy=False, remorse=True, impact="Medium")
             ]
-
         else:  # GENERIC
             memories = [
                 Memory("Reflexión sobre las consecuencias de las acciones", empathy=False, remorse=False, impact="Low"),
@@ -117,8 +108,7 @@ class MemoryFactory:
                 Memory("Vivencias que invitan a la autorreflexión", empathy=True, remorse=False, impact="Low")
             ]
 
-        # Selecciona un recuerdo al azar de los definidos para el tipo de crimen
-        return random.choice(memories)
+        return memories
 
 class Criminal(db.Model):
     __tablename__ = 'criminals'
