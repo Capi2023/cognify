@@ -131,7 +131,7 @@ A medida que el sistema se expanda y sea adoptado por más instituciones, deber�
 
 La asignación efectiva de recuerdos personalizados a cada delincuente requiere el desarrollo de algoritmos sofisticados que puedan considerar múltiples factores, como el tipo de delito, el perfil psicológico y el historial individual. La incorporación de inteligencia artificial y aprendizaje automático puede mejorar la precisión y eficacia del sistema, aunque también agrega complejidad técnica y requiere consideraciones adicionales en cuanto a ética y transparencia algorítmica.
 
-# Resultado de Cognify
+# Pruebas y Resultados de Cognify
 ### Pantalla de Inicio
 ![Pantalla de Inicio](imagenes/inicio.png)
 La página de inicio de Cognify ofrece una interfaz sencilla para la gestión y rehabilitación de delincuentes. Incluye un formulario donde los usuarios pueden registrar rápidamente a nuevos delincuentes, ingresando su nombre y seleccionando el tipo de delito. Debajo, se presenta una Lista de Delincuentes previamente registrados, mostrando el nombre, tipo de delito y dos opciones de procesamiento: "Sentencia Normal" y "Cognify". La opción Cognify permite aplicar un enfoque de rehabilitación cognitiva que busca desarrollar empatía y comprensión en los delincuentes. Cada registro también muestra los resultados del procesamiento, permitiendo un seguimiento personalizado y facilitando una rehabilitación más humana y efectiva.
