@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sistema Cognify</title></head>
+<body>
+<h1>Sistema Cognify</h1>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <p>{{ form.name.label }}<br>{{ form.name(size=32) }}</p>
+    <p>{{ form.crime_type.label }}<br>{{ form.crime_type() }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+
+<h2>Lista de Delincuentes</h2>
+{% for criminal in criminals %}
+    <div>
+        <h3>{{ criminal.name }}</h3>
+        <p>Tipo de Delito: {{ criminal.crime_type }}</p>
+        <form action="{{ url_for('process_criminal', criminal_id=criminal.id) }}" method="post">
+            <button type="submit" name="choice" value="sentencia_normal">Sentencia Normal</button>
+            <button type="submit" name="choice" value="cognify">Cognify</button>
+        </form>
+        {% if criminal.sentencia %}
+            <div>
+                <h4>Resultado de la Procesamiento</h4>
+                <p><strong>Sentencia:</strong> {{ criminal.sentencia }}</p>
+            </div>
+        {% elif criminal.cognify_data %}
+            <div>
+                <h4>Resultados de Cognify</h4>
+                <ul>
+                    {% for memory in criminal.cognify_data %}
+                        <li>{{ memory.description }} - Empatía: {{ 'Sí' if memory.empathy else 'No' }}, Arrepentimiento: {{ 'Sí' if memory.remorse else 'No' }}, Impacto: {{ memory.impact }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}
+</body>
+</html>

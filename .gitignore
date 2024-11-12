@@ -1,0 +1,28 @@
+# Entorno virtual
+venv/
+cofvenv/
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Archivos de configuración de la base de datos y migraciones
+*.db
+instance/
+migrations/
+
+# Archivos de configuración de IDEs y entornos de desarrollo
+.vscode/
+.idea/
+*.swp
+
+# Archivos de log
+*.log
+
+# Archivos de configuración secretos
+config.py
+.env
+.env.*
+
+# Archivos de caché
+.cache/
