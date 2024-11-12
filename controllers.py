@@ -1,4 +1,3 @@
-# controllers.py
 from flask import Flask, render_template, request, redirect, url_for, flash
 from models import db, Criminal, MemoryFactory, SimulationConfig, CrimeType
 from services import CriminalService
@@ -11,13 +10,20 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cognify.db'
 app.config['SECRET_KEY'] = 'A3jR9KpL2vX7WqZ8sB6N1yP4'
 db.init_app(app)
 
+# Formulario para crear un nuevo criminal
 class CriminalForm(FlaskForm):
     name = StringField('Nombre del Delincuente', validators=[DataRequired()])
     crime_type = SelectField('Tipo de Delito', choices=[
         (CrimeType.VIOLENT, 'Violento'), 
         (CrimeType.FINANCIAL, 'Financiero'), 
         (CrimeType.HATE, 'Odio'), 
-        (CrimeType.GENERIC, 'Genérico')
+        (CrimeType.GENERIC, 'Genérico'),
+        (CrimeType.CYBER, 'Cibernético'),
+        (CrimeType.DRUG_TRAFFICKING, 'Tráfico de Drogas'),
+        (CrimeType.HUMAN_TRAFFICKING, 'Tráfico de Personas'),
+        (CrimeType.PROPERTY, 'Robo de Propiedad'),
+        (CrimeType.FRAUD, 'Fraude'),
+        (CrimeType.ENVIRONMENTAL, 'Delito Ambiental')
     ], validators=[DataRequired()])
     submit = SubmitField('Procesar')
 
