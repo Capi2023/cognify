@@ -70,7 +70,7 @@ Flask Routes:
 ```
 En los Controladores, destacan las rutas de Flask y la clase CriminalForm. Las rutas incluyen funciones como list_criminals, process_criminal y select_memory, que manejan solicitudes HTTP y coordinan la lógica de la aplicación. CriminalForm es un formulario que permite crear nuevos criminales con campos como nombre y tipo de delito. Los controladores interactúan con el Modelo a través de servicios como CriminalService, facilitando la comunicación entre la Vista y el Modelo y gestionando el flujo de datos y operaciones de negocio.
 
-# Análisis del Impacto Social y Técnico del Sistema "Cognify"
+# Análisis del Impacto Social y Técnico del Sistema Cognify
 
 ---
 
