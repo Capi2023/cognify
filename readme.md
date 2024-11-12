@@ -1,9 +1,5 @@
 # Cognify
 
----
-
-## Proyecto de Desarrollo de Software
-
 ### Alumnos:
 - **Emiliano Garcia Cordero** - 20211779
 - **Martinez Garcia Gabriel Stoyko** - 20211808
