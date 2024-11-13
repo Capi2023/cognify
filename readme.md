@@ -12,6 +12,9 @@
 
 Fecha de entrega: Martes 12 de noviembre.
 
+### Video de corrida en youtube
+
+https://youtu.be/AYHFthFBmPg
 
 # Diagramas UML (MODELO, VISTA Y CONTROLADOR)
 ## Modelo
@@ -155,6 +158,3 @@ La interfaz presenta dos opciones de acción: "Sentencia Normal" en azul y "Cogn
 ### Pantalla de Reloj
 ![Pantalla de Reloj](imagenes/relojmovien.png)
 
-### Video de corrida en youtube
-
-https://youtu.be/AYHFthFBmPg
